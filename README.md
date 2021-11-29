@@ -5,6 +5,8 @@ This repository is a sandbox for personal development in React.
 The project will include:
 
 - Setting up of React project (using Create React App)
+- Components
+- Dynamic Values
 
 ## Commands
 
