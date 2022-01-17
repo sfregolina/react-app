@@ -1,6 +1,23 @@
+import { useState, useEffect } from 'react';
+import ProductList from './ProductList';
+
 const Wishlist = () => {
+  const [products, setProducts] = useState(null);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/products')
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        setProducts(data);
+      });
+  }, []);
+
   return (
-    <div className="product-list"></div>
+    <>
+      {products && <ProductList products={products}/>}
+    </>
   );
 }
 
