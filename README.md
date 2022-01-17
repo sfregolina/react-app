@@ -10,7 +10,13 @@ The project will include:
 
 ## Commands
 
-| Command                | Description                        |
-| ---------------------- | ---------------------------------- |
-| `npx create-react-app` | Install Create React App toolchain |
-| `npm run start`        | Run the app                        |
+| Command                                  | Description                        |
+| ---------------------------------------- | ---------------------------------- |
+| `npx create-react-app`                   | Install Create React App toolchain |
+| `npm run start`                          | Run the app                        |
+| `npx json-server --watch data/data.json` | Run json server                    |
+
+## Resources
+
+`http://localhost:3000/products`
+`http://localhost:3000/checkout`
