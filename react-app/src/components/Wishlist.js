@@ -16,7 +16,7 @@ const Wishlist = () => {
 
   return (
     <>
-      {products && <ProductList products={products}/>}
+      {products && <ProductList products={products} style={{maxWidth: "48%"}}/>}
     </>
   );
 }

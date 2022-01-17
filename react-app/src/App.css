@@ -1,3 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Roboto:wght@300;400&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
 .App {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #000;
+  background-color: #FFF;
+  padding: 0 20px;
+}
+
+.product {
   text-align: center;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.product h3 {
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.product p {
+  font-size: 14px;
+  color: #2D2D2D;
+  margin-bottom: 5px;
 }

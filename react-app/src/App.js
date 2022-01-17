@@ -6,7 +6,11 @@ import Checkout from './components/Checkout';
 const App = () => {
   return (
     <div className="App">
-      <div className="container">
+      <div className="container" style={{
+        display: "flex",
+        maxWidth: "1440px",
+        margin: "auto"
+      }}>
         <div className="wishlist-wrapper">
           <Header />
           <Wishlist />

@@ -1,7 +1,10 @@
 const Header = () => {
   return (
-    <header className="header">
-      <h2>My wishlist</h2>
+    <header className="header" style={{padding: "20px 0"}}>
+      <h2 style={{
+        fontFamily: "Merriweather, serif",
+        fontSize: "28px"
+        }}>My wishlist</h2>
     </header>
   );
 }
