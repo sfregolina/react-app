@@ -1,20 +1,16 @@
 import './App.css';
-import Header from './components/Header';
 import Wishlist from './components/Wishlist';
 import Checkout from './components/Checkout';
+import StyledContainer from './components/StyledContainer';
 
 const App = () => {
+
   return (
     <div className="App">
-      <div className="container">
-        <div className="wishlist-wrapper">
-          <Header />
-          <Wishlist />
-        </div>
-        <div className="checkout-wrapper">
-          <Checkout />
-        </div>
-      </div>
+      <StyledContainer>
+        <Wishlist />
+        <Checkout />
+      </StyledContainer>
     </div>
   );
 }
