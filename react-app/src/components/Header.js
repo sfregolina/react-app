@@ -1,16 +1,26 @@
+/** @jsxImportSource @emotion/react */
+
+const StyledHeader = ({ children }) => (
+  <header css={{ 
+    padding: "20px 0 10px",
+    borderBottom: "1px solid #ccc",
+    marginBottom: "10px" 
+  }}>{ children }</header>
+)
+
+const StyledHeading2 = ({ children }) => (
+  <h2 css={{ 
+    fontFamily: "Merriweather, serif",
+    fontSize: "18px",
+    textTransform: "uppercase"
+  }}>{ children }</h2>
+)
+
 const Header = () => {
   return (
-    <header className="header" style={{
-      padding: "20px 0 10px",
-      borderBottom: "1px solid #ccc",
-      marginBottom: "10px"
-    }}>
-      <h2 style={{
-        fontFamily: "Merriweather, serif",
-        fontSize: "18px",
-        textTransform: "uppercase"
-        }}>My wishlist</h2>
-    </header>
+    <StyledHeader>
+      <StyledHeading2>My wishlist</StyledHeading2>
+    </StyledHeader>
   );
 }
 
