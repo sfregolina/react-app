@@ -1,16 +1,23 @@
+/** @jsxImportSource @emotion/react */
+import useBreakpointValue from "../functions/useBreakpointValue";
+import ProductCard from "./ProductCard";
+
 const ProductList = ({ products }) => {
 
+  const StyledProductList = ({ children }) => (
+    <div css={useBreakpointValue({
+      display: "grid",
+      gap: "20px",
+      gridTemplateColumns: ['1fr 1fr', '1fr 1fr 1fr', '1fr 1fr 1fr 1fr']
+    })}>{ children }</div>
+  )
+
   return (
-    <div className="product-list">
-      {products.map(product => (
-        <div key={product.id} className="product">
-          <img alt={product.name} src={product.image} style={{maxWidth: "100%"}}/>
-          <h3>{product.designer}</h3>
-          <p>{product.name}</p>
-          <p>{product.price}</p>
-        </div>
+    <StyledProductList>
+      {products?.map(product => (
+        <ProductCard product={product}/>
       ))}
-    </div>
+    </StyledProductList>
   );
 }
 

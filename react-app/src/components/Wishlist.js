@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Header from './Header';
 import ProductList from './ProductList';
 
 const Wishlist = () => {
@@ -15,9 +16,10 @@ const Wishlist = () => {
   }, []);
 
   return (
-    <>
+    <div className="wishlist-wrapper">
+      <Header />
       {products && <ProductList products={products}/>}
-    </>
+    </div>
   );
 }
 
