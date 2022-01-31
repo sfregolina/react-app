@@ -8,6 +8,7 @@ The project will include:
 - Components
 - Dynamic Values
 - Styles
+- Hooks
 
 ## Commands
 

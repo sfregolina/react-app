@@ -8,10 +8,16 @@ const Wishlist = () => {
   useEffect(() => {
     fetch('http://localhost:3000/products')
       .then(res => {
+        if (!res.ok) {
+          throw Error('could not fetch the data for that recource');
+        }
         return res.json();
       })
       .then(data => {
         setProducts(data);
+      })
+      .catch(error => {
+        console.log(error.message);
       });
   }, []);
 
