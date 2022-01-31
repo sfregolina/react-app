@@ -1,25 +1,11 @@
 /** @jsxImportSource @emotion/react */
+import { StyledHeading3 } from "./StyledComponents/StyledHeading3";
+import { StyledParagraph } from "./StyledComponents/StyledParagraph";
 
-const ProductCard = ({product}) => {
+const ProductCard = ({ product }) => {
 
   const StyledProduct = ({ children }) => (
     <div css={{ textAlign: 'center' }}>{ children }</div>
-  )
-
-  const StyledHeading3 = ({ children }) => (
-    <h3 css={{
-      textTransform: 'uppercase',
-      fontSize: '14px',
-      marginBottom: '5px'
-    }}>{ children }</h3>
-  )
-
-  const StyledParagraph = ({ children }) => (
-    <p css={{
-      fontSize: '14px',
-      color: '#2D2D2D',
-      marginBottom: '5px'
-    }}>{ children }</p>
   )
 
   const StyledCta = ({ children }) => (

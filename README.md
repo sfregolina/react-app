@@ -8,7 +8,8 @@ The project will include:
 - Components
 - Dynamic Values
 - Styles
-- Hooks
+- Hooks (`useState`, `UseEffect`)
+- Custom hooks
 
 ## Commands
 
