@@ -71,13 +71,5 @@
       "image": "https://assetsprx.matchesfashion.com/img/product/1427139_1_large.jpg"
     }
   ],
-  "checkout": [
-    {
-      "id": 11,
-      "designer": "Balenciaga",
-      "name": "Oversized denim jacket",
-      "price": "£1,200",
-      "image": "https://assetsprx.matchesfashion.com/img/product/1469638_1_large.jpg"
-    }
-  ]
+  "checkout": []
 }

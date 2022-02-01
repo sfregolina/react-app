@@ -7,7 +7,8 @@ const CheckoutProduct = ({ checkoutProduct }) => {
   const StyledCheckoutProduct = ({ children }) => (
     <div css={{ 
       display: 'flex',
-      textAlign: 'left'
+      textAlign: 'left',
+      marginBottom: '20px'
   }}>{ children }</div>
   )
 

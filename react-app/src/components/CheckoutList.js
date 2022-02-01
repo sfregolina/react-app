@@ -7,9 +7,9 @@ const CheckoutList = ({ checkoutProducts }) => {
     <div css={{
       display: 'flex',
       flexDirection: 'column',
-      backgroundColor: '#DCDCDC',
       height: '100%',
-      padding: '20px'
+      padding: '20px',
+      boxSizing: 'border-box'
     }}>{ children }</div>
   )
 

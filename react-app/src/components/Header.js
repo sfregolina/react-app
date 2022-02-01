@@ -2,7 +2,7 @@
 
 const StyledHeader = ({ children }) => (
   <header css={{ 
-    padding: "20px 0 10px",
+    padding: "0 0 10px",
     borderBottom: "1px solid #ccc",
     marginBottom: "10px" 
   }}>{ children }</header>
