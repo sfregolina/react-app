@@ -8,8 +8,8 @@ const Checkout = () => {
 
   const StyledEmptyCheckoutMessage = ({ children }) => (
     <div css={{
-      padding: "20px",
-      textAlign: "center"
+      padding: '20px',
+      textAlign: 'center'
     }}>{ children }</div>
   )
 

@@ -22,7 +22,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <StyledProduct key={product.id}>
-      <img alt={product.name} src={product.image} style={{maxWidth: "100%"}}/>
+      <img alt={product.name} src={product.image} style={{maxWidth: '100%'}}/>
       <StyledHeading3>{product.designer}</StyledHeading3>
       <StyledParagraph>{product.name}</StyledParagraph>
       <StyledParagraph>{product.price}</StyledParagraph>

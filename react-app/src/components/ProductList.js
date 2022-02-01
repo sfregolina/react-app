@@ -6,8 +6,8 @@ const ProductList = ({ products }) => {
 
   const StyledProductList = ({ children }) => (
     <div css={useBreakpointValue({
-      display: "grid",
-      gap: "20px",
+      display: 'grid',
+      gap: '20px',
       gridTemplateColumns: ['1fr 1fr', '1fr 1fr', '1fr 1fr 1fr']
     })}>{ children }</div>
   )
