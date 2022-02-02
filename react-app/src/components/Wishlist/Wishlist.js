@@ -1,5 +1,5 @@
-import useFetch from './customHooks/useFetch';
-import Header from './Header';
+import useFetch from '../customHooks/useFetch';
+import Header from '../Header/Header';
 import ProductList from './ProductList';
 
 const Wishlist = () => {

@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import CheckoutList from './CheckoutList';
-import useFetch from './customHooks/useFetch';
-import { StyledParagraph } from './StyledComponents/StyledParagraph';
+import useFetch from '../customHooks/useFetch';
+import { StyledParagraph } from '../StyledComponents/StyledParagraph';
 
 const Checkout = () => {
   const { data: checkoutProducts } = useFetch('http://localhost:3000/checkout');

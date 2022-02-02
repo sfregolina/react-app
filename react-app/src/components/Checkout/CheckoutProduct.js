@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
-import { StyledHeading3 } from "./StyledComponents/StyledHeading3"
-import { StyledParagraph } from "./StyledComponents/StyledParagraph"
+import { StyledHeading3 } from "../StyledComponents/StyledHeading3"
+import { StyledParagraph } from "../StyledComponents/StyledParagraph"
 
 const CheckoutProduct = ({ checkoutProduct }) => {
 

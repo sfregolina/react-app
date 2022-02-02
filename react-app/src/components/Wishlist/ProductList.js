@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import useBreakpointValue from "../functions/useBreakpointValue";
+import useBreakpointValue from "../../functions/useBreakpointValue";
 import ProductCard from "./ProductCard";
 
 const ProductList = ({ products }) => {
