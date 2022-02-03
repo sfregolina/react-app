@@ -1,9 +1,9 @@
-/** @jsxImportSource @emotion/react */
+import styled from '@emotion/styled'
 
-export const StyledHeading3 = ({ children }) => (
-  <h3 css={{ 
+export const StyledHeading3 = styled.h3(
+  { 
     textTransform: 'uppercase',
     fontSize: '14px',
-    marginBottom: '5px'
-  }}>{ children }</h3>
+    marginBottom: '5px' 
+  }
 )
