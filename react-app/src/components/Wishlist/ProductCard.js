@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { StyledHeading3 } from "../StyledComponents/StyledHeading3";
 import { StyledParagraph } from "../StyledComponents/StyledParagraph";
-import { useDataController } from "../DataController/DataController"
+import { useDataController } from "../DataControllerProvider/DataControllerProvider"
 
 const StyledProduct = ({ children }) => (
   <div css={{ 

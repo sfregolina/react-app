@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 import CheckoutList from './CheckoutList';
 import { StyledParagraph } from '../StyledComponents/StyledParagraph';
-import { useDataController } from '../DataController/DataController';
+import { useDataController } from '../DataControllerProvider/DataControllerProvider';
 
 const StyledEmptyCheckoutMessage = ({ children }) => (
   <div css={{

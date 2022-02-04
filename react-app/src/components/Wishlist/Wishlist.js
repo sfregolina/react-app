@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useDataController } from '../DataController/DataController';
+import { useDataController } from '../DataControllerProvider/DataControllerProvider';
 import Header from '../Header/Header';
 import ProductList from './ProductList';
 

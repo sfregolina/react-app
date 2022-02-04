@@ -10,6 +10,7 @@ The project will include:
 - Styles
 - Hooks (`useState`, `UseEffect`)
 - Custom hooks
+- Context Provider
 
 ## Commands
 
