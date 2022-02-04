@@ -7,7 +7,8 @@ const StyledCheckoutList = ({ children }) => (
     flexDirection: 'column',
     height: '100%',
     padding: '20px',
-    boxSizing: 'border-box'
+    boxSizing: 'border-box',
+    overflow: 'scroll'
   }}>{ children }</div>
 )
 
