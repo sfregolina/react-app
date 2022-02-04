@@ -1,16 +1,19 @@
 import './App.css';
-import Wishlist from './components/Wishlist';
-import Checkout from './components/Checkout';
-import StyledContainer from './components/StyledContainer';
+import Wishlist from './components/Wishlist/Wishlist';
+import Checkout from './components/Checkout/Checkout';
+import { StyledContainer } from './components/StyledComponents/StyledContainer'
+import { DataControllerProvider } from './components/DataControllerProvider/DataControllerProvider'
 
 const App = () => {
 
   return (
     <div className="App">
-      <StyledContainer>
-        <Wishlist />
-        <Checkout />
-      </StyledContainer>
+      <DataControllerProvider>
+        <StyledContainer>
+          <Wishlist />
+          <Checkout />
+        </StyledContainer>
+      </DataControllerProvider>
     </div>
   );
 }
