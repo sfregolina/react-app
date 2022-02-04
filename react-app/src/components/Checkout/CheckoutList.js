@@ -1,17 +1,17 @@
 /** @jsxImportSource @emotion/react */
 import CheckoutProduct from "./CheckoutProduct";
 
-const CheckoutList = ({ checkoutProducts }) => {
+const StyledCheckoutList = ({ children }) => (
+  <div css={{
+    display: 'flex',
+    flexDirection: 'column',
+    height: '100%',
+    padding: '20px',
+    boxSizing: 'border-box'
+  }}>{ children }</div>
+)
 
-  const StyledCheckoutList = ({ children }) => (
-    <div css={{
-      display: 'flex',
-      flexDirection: 'column',
-      height: '100%',
-      padding: '20px',
-      boxSizing: 'border-box'
-    }}>{ children }</div>
-  )
+const CheckoutList = ({ checkoutProducts }) => {
 
   return (
     <StyledCheckoutList>

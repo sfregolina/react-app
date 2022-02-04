@@ -2,22 +2,22 @@
 import { StyledHeading3 } from "../StyledComponents/StyledHeading3"
 import { StyledParagraph } from "../StyledComponents/StyledParagraph"
 
-const CheckoutProduct = ({ checkoutProduct }) => {
+const StyledCheckoutProduct = ({ children }) => (
+  <div css={{ 
+    display: 'flex',
+    textAlign: 'left',
+    marginBottom: '20px'
+}}>{ children }</div>
+)
 
-  const StyledCheckoutProduct = ({ children }) => (
-    <div css={{ 
-      display: 'flex',
-      textAlign: 'left',
-      marginBottom: '20px'
+const StyledImageWrapper = ({ children }) => (
+  <div css={{ 
+    width: '100px',
+    marginRight: '10px'
   }}>{ children }</div>
-  )
+)
 
-  const StyledImageWrapper = ({ children }) => (
-    <div css={{ 
-      width: '100px',
-      marginRight: '10px'
-    }}>{ children }</div>
-  )
+const CheckoutProduct = ({ checkoutProduct }) => {
 
   return (
     <StyledCheckoutProduct key={checkoutProduct.id}>
