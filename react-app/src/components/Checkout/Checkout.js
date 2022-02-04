@@ -1,22 +1,43 @@
 /** @jsxImportSource @emotion/react */
+import { useEffect } from 'react';
 import CheckoutList from './CheckoutList';
-import useFetch from '../customHooks/useFetch';
 import { StyledParagraph } from '../StyledComponents/StyledParagraph';
+import { useDataController } from '../DataController/DataController';
+
+const StyledEmptyCheckoutMessage = ({ children }) => (
+  <div css={{
+    padding: '20px',
+    textAlign: 'center'
+  }}>{ children }</div>
+)
 
 const Checkout = () => {
-  const { data: checkoutProducts } = useFetch('http://localhost:3000/checkout');
+  const { data: {checkout}, setData } = useDataController();
 
-  const StyledEmptyCheckoutMessage = ({ children }) => (
-    <div css={{
-      padding: '20px',
-      textAlign: 'center'
-    }}>{ children }</div>
-  )
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const checkout = await fetch('http://localhost:3000/checkout')
+        .then((res) => {
+          if (!res.ok) {
+            throw Error('could not fetch the data for that recource');
+          }
+          return res.json();
+        }).catch(error => {
+          console.log(error.message);
+        });
+
+      setData(data => {
+        return {...data, checkout}
+      })
+    }
+    
+    fetchProducts()
+  }, [setData])
 
   return (
     <div className="checkout-wrapper" style={{minWidth: '40%', backgroundColor: '#DCDCDC'}}>
-      {checkoutProducts?.length > 0 ? (
-        <CheckoutList checkoutProducts={checkoutProducts}/>
+      {checkout?.length > 0 ? (
+        <CheckoutList checkoutProducts={checkout}/>
       ) : (
         <StyledEmptyCheckoutMessage>
           <StyledParagraph>Your bag is empty</StyledParagraph>

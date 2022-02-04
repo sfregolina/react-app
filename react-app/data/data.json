@@ -1,75 +1,116 @@
 {
   "products": [
     {
-      "id": 1,
+      "productId": 1,
       "designer": "Balenciaga",
       "name": "Oversized denim jacket",
       "price": "£1,200",
       "image": "https://assetsprx.matchesfashion.com/img/product/1469638_1_large.jpg"
     },
     {
-      "id": 2,
+      "productId": 2,
       "designer": "Gucci",
       "name": "Leather pumps",
       "price": "£600",
       "image": "https://assetsprx.matchesfashion.com/img/product/1473733_1_large.jpg"
     },
     {
-      "id": 3,
+      "productId": 3,
       "designer": "Lemaire",
       "name": "Wide-sleeve top",
       "price": "£480",
       "image": "https://assetsprx.matchesfashion.com/img/product/1464086_1_large.jpg"
     },
     {
-      "id": 4,
+      "productId": 4,
       "designer": "Simone Rocha",
       "name": "Embroidered dress",
       "price": "£920",
       "image": "https://assetsprx.matchesfashion.com/img/product/1473831_1_large.jpg"
     },
     {
-      "id": 5,
+      "productId": 5,
       "designer": "Loewe",
       "name": "Puzzled medium bag",
       "price": "£2,400",
       "image": "https://assetsprx.matchesfashion.com/img/product/1420070_1_large.jpg"
     },
     {
-      "id": 6,
+      "productId": 6,
       "designer": "Jil Sander",
       "name": "Wrap front blazer",
       "price": "£1,600",
       "image": "https://assetsprx.matchesfashion.com/img/product/1458368_1_large.jpg"
     },
     {
-      "id": 7,
+      "productId": 7,
       "designer": "Ganni",
       "name": "Leather clogs",
       "price": "£300",
       "image": "https://assetsprx.matchesfashion.com/img/product/1468693_1_large.jpg"
     },
     {
-      "id": 8,
+      "productId": 8,
       "designer": "Saint Laurent",
       "name": "High-rise trousers",
       "price": "£530",
       "image": "https://assetsprx.matchesfashion.com/img/product/1434064_1_large.jpg"
     },
     {
-      "id": 9,
+      "productId": 9,
       "designer": "Jacquemus",
       "name": "Bambino leather bag",
       "price": "£400",
       "image": "https://assetsprx.matchesfashion.com/img/product/1463437_1_large.jpg"
     },
     {
-      "id": 10,
+      "productId": 10,
       "designer": "Bottega Veneta",
       "name": "Leather ankle boots",
       "price": "£850",
       "image": "https://assetsprx.matchesfashion.com/img/product/1427139_1_large.jpg"
     }
   ],
-  "checkout": []
+  "checkout": [
+    {
+      "productId": 2,
+      "designer": "Gucci",
+      "name": "Leather pumps",
+      "price": "£600",
+      "image": "https://assetsprx.matchesfashion.com/img/product/1473733_1_large.jpg",
+      "id": 1
+    },
+    {
+      "productId": 3,
+      "designer": "Lemaire",
+      "name": "Wide-sleeve top",
+      "price": "£480",
+      "image": "https://assetsprx.matchesfashion.com/img/product/1464086_1_large.jpg",
+      "id": 2
+    },
+    {
+      "productId": 1,
+      "designer": "Balenciaga",
+      "name": "Oversized denim jacket",
+      "price": "£1,200",
+      "image": "https://assetsprx.matchesfashion.com/img/product/1469638_1_large.jpg",
+      "id": 3
+    },
+    {
+      "productId": 5,
+      "designer": "Loewe",
+      "name": "Puzzled medium bag",
+      "price": "£2,400",
+      "image": "https://assetsprx.matchesfashion.com/img/product/1420070_1_large.jpg",
+      "id": 4
+    },
+    {
+      "productId": 2,
+      "designer": "Gucci",
+      "name": "Leather pumps",
+      "price": "£600",
+      "image": "https://assetsprx.matchesfashion.com/img/product/1473733_1_large.jpg",
+      "id": 5
+    }
+  ]
 }
