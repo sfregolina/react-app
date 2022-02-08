@@ -71,14 +71,5 @@
       "image": "https://assetsprx.matchesfashion.com/img/product/1427139_1_large.jpg"
     }
   ],
-  "checkout": [
-    {
-      "sku": 2,
-      "designer": "Gucci",
-      "name": "Leather pumps",
-      "price": "£600",
-      "image": "https://assetsprx.matchesfashion.com/img/product/1473733_1_large.jpg",
-      "id": 1
-    }
-  ]
+  "checkout": []
 }
