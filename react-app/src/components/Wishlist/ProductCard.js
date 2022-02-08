@@ -29,7 +29,7 @@ const StyledCta = ({ children, onClick }) => (
 
 const ProductCard = ({ product }) => {
 
-  const {setData} = useDataController()
+  const { setData } = useDataController()
 
   const addToBag = (product) => {
     fetch('http://localhost:3000/checkout', {
@@ -40,7 +40,6 @@ const ProductCard = ({ product }) => {
       return res.json();
     }).then((checkout)=> {
       setData((data) => {
-
         return {
           ...data,
           checkout: [...data.checkout, checkout]
