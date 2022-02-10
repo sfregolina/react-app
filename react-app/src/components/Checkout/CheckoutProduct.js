@@ -65,6 +65,7 @@ const CheckoutProduct = ({ checkoutProduct }) => {
         <StyledHeading3>{checkoutProduct.designer}</StyledHeading3>
         <StyledParagraph>{checkoutProduct.name}</StyledParagraph>
         <StyledParagraph>{checkoutProduct.price}</StyledParagraph>
+        <StyledParagraph>Quantity: {checkoutProduct.quantity}</StyledParagraph>
       </StyledDescriptionWrapper>
       <StyledCloseButton onClick={() => deleteCheckoutProduct(checkoutProduct)}><CloseIcon/></StyledCloseButton>
     </StyledCheckoutProduct>
