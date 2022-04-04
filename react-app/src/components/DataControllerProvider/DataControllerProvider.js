@@ -2,22 +2,24 @@ import React, { useContext, useState } from "react";
 
 const initialData = {
   products: [],
-  checkout: []
-}
+  checkout: [],
+};
 
 const initialContext = {
   data: initialData,
-  setData: () => {}
-}
+  setData: () => {},
+};
 
 const DataControllerContext = React.createContext(initialContext);
 
 export const useDataController = () => useContext(DataControllerContext);
 
-export const DataControllerProvider = ({children}) => {
+export const DataControllerProvider = ({ children }) => {
   const [data, setData] = useState(initialData);
 
   return (
-    <DataControllerContext.Provider value={{data, setData}}>{children}</DataControllerContext.Provider>
-  )
-}
+    <DataControllerContext.Provider value={{ data, setData }}>
+      {children}
+    </DataControllerContext.Provider>
+  );
+};

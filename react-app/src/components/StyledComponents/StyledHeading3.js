@@ -1,9 +1,7 @@
-import styled from '@emotion/styled'
+import styled from "@emotion/styled";
 
-export const StyledHeading3 = styled.h3(
-  { 
-    textTransform: 'uppercase',
-    fontSize: '14px',
-    marginBottom: '5px' 
-  }
-)
+export const StyledHeading3 = styled.h3({
+  textTransform: "uppercase",
+  fontSize: "14px",
+  marginBottom: "5px",
+});
