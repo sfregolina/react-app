@@ -36,7 +36,7 @@ const Wishlist = () => {
       style={{ padding: "20px", overflowY: "scroll" }}
     >
       <Header />
-      {products.length > 0 && <ProductList products={products} />}
+      {products?.length > 0 && <ProductList products={products} />}
     </div>
   );
 };

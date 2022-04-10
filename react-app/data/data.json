@@ -71,24 +71,5 @@
       "image": "https://assetsprx.matchesfashion.com/img/product/1427139_1_large.jpg"
     }
   ],
-  "checkout": [
-    {
-      "sku": 1,
-      "designer": "Balenciaga",
-      "name": "Oversized denim jacket",
-      "price": "£1,200",
-      "image": "https://assetsprx.matchesfashion.com/img/product/1469638_1_large.jpg",
-      "quantity": 7,
-      "id": 1
-    },
-    {
-      "sku": 2,
-      "designer": "Gucci",
-      "name": "Leather pumps",
-      "price": "£600",
-      "image": "https://assetsprx.matchesfashion.com/img/product/1473733_1_large.jpg",
-      "quantity": 4,
-      "id": 2
-    }
-  ]
+  "checkout": []
 }

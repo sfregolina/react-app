@@ -36,104 +36,77 @@ const StyledCta = ({ children, onClick }) => (
 
 const ProductCard = ({ product }) => {
   const { setData } = useDataController();
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(0);
 
   const addToBag = (product) => {
     setCount(count + 1);
 
-    const fetchProducts = async () => {
-      await fetch("http://localhost:3000/checkout")
+    const checkProductInCheckout = async () => {
+      const products = await fetch("http://localhost:3000/checkout");
+      const res = await products.json();
+
+      const checkoutProduct = res.find((item) => item.sku === product.sku);
+
+      if (!checkoutProduct) {
+        productPostRequest();
+      } else {
+        productPatchRequest(checkoutProduct.id);
+      }
+    };
+
+    const productPostRequest = async () => {
+      await fetch(`http://localhost:3000/checkout`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...product,
+          quantity: count,
+        }),
+      })
         .then((res) => {
           return res.json();
         })
-        .then((checkout) => {
-          const productExists = (id) => {
-            return checkout.some((item) => {
-              return item.sku === id;
-            });
-          };
-
-          const getCheckoutProductId = (id) => {
-            const foundProduct = checkout.find((item) => item.sku === id);
-            return foundProduct.id;
-          };
-
-          if (!productExists(product.sku)) {
-            fetch(`http://localhost:3000/checkout`, {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({
-                ...product,
-                quantity: count,
-              }),
-            })
-              .then((res) => {
-                return res.json();
-              })
-              .then((checkoutItem) => {
-                setData((data) => {
-                  return {
-                    ...data,
-                    checkout: [...data.checkout, checkoutItem],
-                  };
-                });
-              });
-          } else {
-            const checkoutItemId = getCheckoutProductId(product.sku);
-
-            fetch(`http://localhost:3000/checkout/${checkoutItemId}`, {
-              method: "PATCH",
-              headers: {
-                "Content-type": "application/json",
-              },
-              body: JSON.stringify({
-                quantity: count,
-              }),
-            })
-              .then((res) => {
-                return res.json();
-              })
-              .then((checkoutItem) => {
-                setData((data) => {
-                  const index = data.checkout.findIndex(
-                    (item) => item.sku === checkoutItem.sku
-                  );
-                  data.checkout[index] = checkoutItem;
-                  return {
-                    ...data,
-                    checkout: data.checkout,
-                  };
-                });
-              });
-          }
-
+        .then((checkoutItem) => {
           setData((data) => {
-            return { ...data, checkout };
+            return {
+              ...data,
+              checkout: [...data.checkout, checkoutItem],
+            };
+          });
+        })
+        .catch((error) => {
+          console.log(error.message);
+        });
+    };
+
+    const productPatchRequest = async (id) => {
+      await fetch(`http://localhost:3000/checkout/${id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({
+          quantity: count,
+        }),
+      })
+        .then((res) => {
+          return res.json();
+        })
+        .then((checkoutItem) => {
+          setData((data) => {
+            const index = data.checkout.findIndex(
+              (item) => item.id === checkoutItem.id
+            );
+            data.checkout[index] = checkoutItem;
+            return {
+              ...data,
+              checkout: data.checkout,
+            };
           });
         });
     };
 
-    fetchProducts();
-
-    // fetch(`http://localhost:3000/checkout`, {
-    //   method: 'POST',
-    //   headers: {'Content-Type': 'application/json'},
-    //   body: JSON.stringify({
-    //     ...product,
-    //     quantity: count
-    //   })
-    // }).then(res => {
-    //   return res.json();
-    // }).then((checkoutItem)=> {
-    //   setData((data) => {
-    //     return {
-    //       ...data,
-    //       checkout: [...data.checkout, checkoutItem]
-    //     }
-    //   })
-    // }).catch(error => {
-    //   console.log(error.message);
-    // });
+    checkProductInCheckout();
   };
 
   return (
