@@ -1,11 +1,10 @@
-import './App.css';
-import Wishlist from './components/Wishlist/Wishlist';
-import Checkout from './components/Checkout/Checkout';
-import { StyledContainer } from './components/StyledComponents/StyledContainer'
-import { DataControllerProvider } from './components/DataControllerProvider/DataControllerProvider'
+import "./App.css";
+import Wishlist from "./components/Wishlist/Wishlist";
+import Checkout from "./components/Checkout/Checkout";
+import { StyledContainer } from "./components/StyledComponents/StyledContainer";
+import { DataControllerProvider } from "./components/DataControllerProvider/DataControllerProvider";
 
 const App = () => {
-
   return (
     <div className="App">
       <DataControllerProvider>
@@ -16,6 +15,6 @@ const App = () => {
       </DataControllerProvider>
     </div>
   );
-}
+};
 
 export default App;
