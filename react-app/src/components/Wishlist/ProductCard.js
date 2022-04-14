@@ -1,8 +1,12 @@
 /** @jsxImportSource @emotion/react */
-import { useState } from "react";
 import { StyledHeading3 } from "../StyledComponents/StyledHeading3";
 import { StyledParagraph } from "../StyledComponents/StyledParagraph";
 import { useDataController } from "../DataControllerProvider/DataControllerProvider";
+import {
+  getCheckoutProduct,
+  postCheckoutProduct,
+  patchCheckoutProduct,
+} from "../../api/checkout";
 
 const StyledProduct = ({ children }) => (
   <div
@@ -36,77 +40,40 @@ const StyledCta = ({ children, onClick }) => (
 
 const ProductCard = ({ product }) => {
   const { setData } = useDataController();
-  const [count, setCount] = useState(0);
 
-  const addToBag = (product) => {
-    setCount(count + 1);
+  const addToBag = async () => {
+    const checkoutProduct = await getCheckoutProduct(product);
 
-    const checkProductInCheckout = async () => {
-      const products = await fetch("http://localhost:3000/checkout");
-      const res = await products.json();
+    if (checkoutProduct) {
+      checkoutProduct.quantity += 1;
+      await patchCheckoutProduct(checkoutProduct);
 
-      const checkoutProduct = res.find((item) => item.sku === product.sku);
+      setData((data) => {
+        const index = data.checkout.findIndex(
+          (item) => item.id === checkoutProduct.id
+        );
+        data.checkout[index] = checkoutProduct;
 
-      if (!checkoutProduct) {
-        productPostRequest();
-      } else {
-        productPatchRequest(checkoutProduct.id);
-      }
-    };
+        return {
+          ...data,
+          checkout: data.checkout,
+        };
+      });
 
-    const productPostRequest = async () => {
-      await fetch(`http://localhost:3000/checkout`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...product,
-          quantity: count,
-        }),
-      })
-        .then((res) => {
-          return res.json();
-        })
-        .then((checkoutItem) => {
-          setData((data) => {
-            return {
-              ...data,
-              checkout: [...data.checkout, checkoutItem],
-            };
-          });
-        })
-        .catch((error) => {
-          console.log(error.message);
-        });
-    };
+      return;
+    }
 
-    const productPatchRequest = async (id) => {
-      await fetch(`http://localhost:3000/checkout/${id}`, {
-        method: "PATCH",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify({
-          quantity: count,
-        }),
-      })
-        .then((res) => {
-          return res.json();
-        })
-        .then((checkoutItem) => {
-          setData((data) => {
-            const index = data.checkout.findIndex(
-              (item) => item.id === checkoutItem.id
-            );
-            data.checkout[index] = checkoutItem;
-            return {
-              ...data,
-              checkout: data.checkout,
-            };
-          });
-        });
-    };
+    const newCheckoutProduct = await postCheckoutProduct({
+      ...product,
+      quantity: 1,
+    });
 
-    checkProductInCheckout();
+    setData((data) => {
+      return {
+        ...data,
+        checkout: [...data.checkout, newCheckoutProduct],
+      };
+    });
   };
 
   return (
@@ -119,7 +86,7 @@ const ProductCard = ({ product }) => {
       <StyledHeading3>{product.designer}</StyledHeading3>
       <StyledParagraph css={{ flex: 1 }}>{product.name}</StyledParagraph>
       <StyledParagraph>{product.price}</StyledParagraph>
-      <StyledCta onClick={() => addToBag(product)}>Add to bag</StyledCta>
+      <StyledCta onClick={() => addToBag()}>Add to bag</StyledCta>
     </StyledProduct>
   );
 };
