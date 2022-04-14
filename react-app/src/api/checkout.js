@@ -3,6 +3,9 @@ export const getCheckoutProduct = (product) => {
     .then((res) => res.json())
     .then((checkoutProduct) => {
       return checkoutProduct[0];
+    })
+    .catch((error) => {
+      console.log(error.message);
     });
 };
 
