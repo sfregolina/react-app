@@ -1,6 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { useEffect } from "react";
 import CheckoutList from "./CheckoutList";
+import { StyledButton } from "../StyledComponents/StyledButton";
+import CloseIcon from "../../icons/CloseIcon";
 import { StyledParagraph } from "../StyledComponents/StyledParagraph";
 import { useDataController } from "../DataControllerProvider/DataControllerProvider";
 
@@ -45,8 +47,11 @@ const Checkout = () => {
   return (
     <div
       className="checkout-wrapper"
-      style={{ minWidth: "40%", backgroundColor: "#DCDCDC" }}
+      style={{ minWidth: "40%", backgroundColor: "#DCDCDC", padding: "20px" }}
     >
+      <StyledButton style={{ paddingTop: "4px" }}>
+        <CloseIcon />
+      </StyledButton>
       {checkout?.length > 0 ? (
         <CheckoutList checkoutProducts={checkout} />
       ) : (
