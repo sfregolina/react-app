@@ -1,6 +1,8 @@
 /** @jsxImportSource @emotion/react */
-import BurgerIcon from "../../icons/BurgerIcon";
+import ShoppingBagIcon from "../../icons/ShoppingBagIcon";
+import CloseIcon from "../../icons/CloseIcon";
 import { StyledButton } from "../StyledComponents/StyledButton";
+import { useDrawerState } from "../DrawerStateProvider/DrawerStateProvider";
 
 const StyledHeader = ({ children }) => (
   <header
@@ -30,11 +32,16 @@ const StyledHeading2 = ({ children }) => (
 );
 
 const Header = () => {
+  const { isOpen, setIsOpen } = useDrawerState();
+  const toggleDrawer = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <StyledHeader>
       <StyledHeading2>My wishlist</StyledHeading2>
-      <StyledButton>
-        <BurgerIcon />
+      <StyledButton onClick={toggleDrawer}>
+        {isOpen ? <CloseIcon /> : <ShoppingBagIcon />}
       </StyledButton>
     </StyledHeader>
   );

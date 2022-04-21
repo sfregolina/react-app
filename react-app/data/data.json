@@ -71,5 +71,51 @@
       "image": "https://assetsprx.matchesfashion.com/img/product/1427139_1_large.jpg"
     }
   ],
-  "checkout": []
+  "checkout": [
+    {
+      "sku": 3,
+      "designer": "Lemaire",
+      "name": "Wide-sleeve top",
+      "price": "£480",
+      "image": "https://assetsprx.matchesfashion.com/img/product/1464086_1_large.jpg",
+      "quantity": 1,
+      "id": 1
+    },
+    {
+      "sku": 2,
+      "designer": "Gucci",
+      "name": "Leather pumps",
+      "price": "£600",
+      "image": "https://assetsprx.matchesfashion.com/img/product/1473733_1_large.jpg",
+      "quantity": 1,
+      "id": 2
+    },
+    {
+      "sku": 1,
+      "designer": "Balenciaga",
+      "name": "Oversized denim jacket",
+      "price": "£1,200",
+      "image": "https://assetsprx.matchesfashion.com/img/product/1469638_1_large.jpg",
+      "quantity": 1,
+      "id": 3
+    },
+    {
+      "sku": 4,
+      "designer": "Simone Rocha",
+      "name": "Embroidered dress",
+      "price": "£920",
+      "image": "https://assetsprx.matchesfashion.com/img/product/1473831_1_large.jpg",
+      "quantity": 1,
+      "id": 4
+    },
+    {
+      "sku": 5,
+      "designer": "Loewe",
+      "name": "Puzzled medium bag",
+      "price": "£2,400",
+      "image": "https://assetsprx.matchesfashion.com/img/product/1420070_1_large.jpg",
+      "quantity": 1,
+      "id": 5
+    }
+  ]
 }
