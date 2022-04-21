@@ -1,13 +1,28 @@
 import { useEffect } from "react";
+import styled from "@emotion/styled";
 import { useDataController } from "../DataControllerProvider/DataControllerProvider";
+import { useDrawerState } from "../DrawerStateProvider/DrawerStateProvider";
 import Header from "../Header/Header";
 import ProductList from "./ProductList";
+
+const StyledWishlist = styled("div")`
+  padding: 20px;
+  overflow-y: scroll;
+  flex: 2;
+  transition: flex 0.3s ease-in-out;
+
+  &.reduced {
+    flex: 1;
+  }
+`;
 
 const Wishlist = () => {
   const {
     data: { products },
     setData,
   } = useDataController();
+
+  const { isOpen } = useDrawerState();
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -31,13 +46,10 @@ const Wishlist = () => {
   }, [setData]);
 
   return (
-    <div
-      className="wishlist-wrapper"
-      style={{ padding: "20px", overflowY: "scroll" }}
-    >
+    <StyledWishlist className={`wishlist-wrapper ${isOpen ? "reduced" : ""}`}>
       <Header />
       {products?.length > 0 && <ProductList products={products} />}
-    </div>
+    </StyledWishlist>
   );
 };
 
