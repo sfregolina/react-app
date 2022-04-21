@@ -1,26 +1,29 @@
-import styled from "@emotion/styled";
+/** @jsxImportSource @emotion/react */
+import useBreakpointValue from "../../functions/useBreakpointValue";
 import { useDrawerState } from "../DrawerStateProvider/DrawerStateProvider";
 
 const Drawer = ({ children }) => {
   const { isOpen } = useDrawerState();
 
-  const StyledDrawer = styled("div")`
-    max-width: 40%;
-    flex: 0;
-    background-color: #dcdcdc;
-    overflow-y: scroll;
-    transition: flex 0.3s ease-in-out;
-
-    &.isOpen {
-      flex: 1;
-    }
-  `;
-
-  return (
-    <StyledDrawer className={`drawer ${isOpen ? "isOpen" : ""}`}>
+  const StyledDrawer = ({ children }) => (
+    <div
+      css={useBreakpointValue({
+        maxWidth: ["100%", "50%", "40%"],
+        flex: "0",
+        backgroundColor: "#dcdcdc",
+        overflowY: "scroll",
+        transition: "flex 0.3s linear",
+        "&.isOpen": {
+          flex: ["2", "1", "1"],
+        },
+      })}
+      className={`drawer ${isOpen ? "isOpen" : ""}`}
+    >
       {children}
-    </StyledDrawer>
+    </div>
   );
+
+  return <StyledDrawer>{children}</StyledDrawer>;
 };
 
 export default Drawer;
