@@ -1,8 +1,6 @@
 /** @jsxImportSource @emotion/react */
-import { useEffect } from "react";
-import useBreakpointValue from "../../functions/useBreakpointValue";
+import { useEffect, useCallback } from "react";
 import { useDataController } from "../DataControllerProvider/DataControllerProvider";
-import { useDrawerState } from "../DrawerStateProvider/DrawerStateProvider";
 import Header from "../Header/Header";
 import ProductList from "./ProductList";
 
@@ -11,26 +9,6 @@ const Wishlist = () => {
     data: { products },
     setData,
   } = useDataController();
-
-  const { isOpen } = useDrawerState();
-
-  const StyledWishlist = ({ children }) => (
-    <div
-      css={useBreakpointValue({
-        padding: ["0", "20px", "20px"],
-        overflowY: "scroll",
-        flex: "2",
-        transition: "flex 0.3s linear",
-
-        "&.reduced": {
-          flex: ["0", "1", "1"],
-        },
-      })}
-      className={`wishlist-wrapper ${isOpen ? "reduced" : ""}`}
-    >
-      {children}
-    </div>
-  );
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -54,10 +32,12 @@ const Wishlist = () => {
   }, [setData]);
 
   return (
-    <StyledWishlist>
-      <Header />
-      {products?.length > 0 && <ProductList products={products} />}
-    </StyledWishlist>
+    <div className="wishlist-wrapper" style={{ overflowY: "scroll" }}>
+      <div style={{ padding: "20px" }}>
+        <Header />
+        {products?.length > 0 && <ProductList products={products} />}
+      </div>
+    </div>
   );
 };
 

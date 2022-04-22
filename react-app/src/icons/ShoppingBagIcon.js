@@ -1,8 +1,8 @@
 const ShoppingBagIcon = () => {
   return (
     <svg
-      width="16"
-      height="16"
+      width="18"
+      height="18"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 106.53 122.88"
