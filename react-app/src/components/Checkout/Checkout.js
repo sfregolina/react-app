@@ -1,11 +1,11 @@
 /** @jsxImportSource @emotion/react */
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import CheckoutList from "./CheckoutList";
 import CloseIcon from "../../icons/CloseIcon";
 import { StyledButton } from "../StyledComponents/StyledButton";
 import { StyledParagraph } from "../StyledComponents/StyledParagraph";
 import { useDataController } from "../DataControllerProvider/DataControllerProvider";
-import { useDrawerState } from "../DrawerStateProvider/DrawerStateProvider";
+import { CartStateContext } from "../CartStateProvider/CartStateProvider";
 
 const StyledEmptyCheckoutMessage = ({ children }) => (
   <div
@@ -24,7 +24,7 @@ const Checkout = () => {
     setData,
   } = useDataController();
 
-  const { isOpen, setIsOpen } = useDrawerState();
+  const { isOpen, setIsOpen } = useContext(CartStateContext);
 
   useEffect(() => {
     const fetchProducts = async () => {

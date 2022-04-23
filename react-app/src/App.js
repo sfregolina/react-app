@@ -1,15 +1,15 @@
 import "./App.css";
 import Cart from "./components/Cart/Cart";
 import { DataControllerProvider } from "./components/DataControllerProvider/DataControllerProvider";
-import { DrawerStateProvider } from "./components/DrawerStateProvider/DrawerStateProvider";
+import { CartStateProvider } from "./components/CartStateProvider/CartStateProvider";
 
 const App = () => {
   return (
     <div className="App">
       <DataControllerProvider>
-        <DrawerStateProvider>
+        <CartStateProvider>
           <Cart />
-        </DrawerStateProvider>
+        </CartStateProvider>
       </DataControllerProvider>
     </div>
   );

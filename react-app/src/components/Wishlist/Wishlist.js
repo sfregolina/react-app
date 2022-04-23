@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { useEffect, useCallback } from "react";
+import { useEffect } from "react";
 import { useDataController } from "../DataControllerProvider/DataControllerProvider";
 import Header from "../Header/Header";
 import ProductList from "./ProductList";

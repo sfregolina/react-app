@@ -1,11 +1,12 @@
+import { useContext } from "react";
 import Wishlist from "../Wishlist/Wishlist";
 import Checkout from "../Checkout/Checkout";
 import Drawer from "../Drawer/Drawer";
 import { StyledContainer } from "../StyledComponents/StyledContainer";
-import { useDrawerState } from "../DrawerStateProvider/DrawerStateProvider";
+import { CartStateContext } from "../CartStateProvider/CartStateProvider";
 
 const Cart = () => {
-  const { isOpen } = useDrawerState();
+  const { isOpen } = useContext(CartStateContext);
   return (
     <StyledContainer>
       <Wishlist />

@@ -1,3 +1,14 @@
+export const getCheckoutProducts = () => {
+  return fetch("http://localhost:3000/checkout")
+    .then((res) => res.json())
+    .then((checkoutProducts) => {
+      return checkoutProducts;
+    })
+    .catch((error) => {
+      console.log(error.message);
+    });
+};
+
 export const getCheckoutProduct = (product) => {
   return fetch(`http://localhost:3000/checkout?sku=${product.sku}`)
     .then((res) => res.json())

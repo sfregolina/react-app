@@ -1,8 +1,11 @@
 /** @jsxImportSource @emotion/react */
+import { useContext } from "react";
 import ShoppingBagIcon from "../../icons/ShoppingBagIcon";
 import CloseIcon from "../../icons/CloseIcon";
 import { StyledButton } from "../StyledComponents/StyledButton";
-import { useDrawerState } from "../DrawerStateProvider/DrawerStateProvider";
+import { StyledHeading2 } from "../StyledComponents/StyledHeading2";
+import { StyledParagraph } from "../StyledComponents/StyledParagraph";
+import { CartStateContext } from "../CartStateProvider/CartStateProvider";
 
 const StyledHeader = ({ children }) => (
   <header
@@ -19,20 +22,19 @@ const StyledHeader = ({ children }) => (
   </header>
 );
 
-const StyledHeading2 = ({ children }) => (
-  <h2
+const StyledMiniCart = ({ children }) => (
+  <div
     css={{
-      fontFamily: "Merriweather, serif",
-      fontSize: "18px",
-      textTransform: "uppercase",
+      display: "flex",
+      alignItems: "baseline",
     }}
   >
     {children}
-  </h2>
+  </div>
 );
 
 const Header = () => {
-  const { isOpen, setIsOpen } = useDrawerState();
+  const { isOpen, setIsOpen, count } = useContext(CartStateContext);
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
   };
@@ -41,7 +43,14 @@ const Header = () => {
     <StyledHeader>
       <StyledHeading2>My wishlist</StyledHeading2>
       <StyledButton onClick={toggleDrawer}>
-        {isOpen ? <CloseIcon /> : <ShoppingBagIcon />}
+        {isOpen ? (
+          <CloseIcon />
+        ) : (
+          <StyledMiniCart>
+            <ShoppingBagIcon />
+            <StyledParagraph>{count}</StyledParagraph>
+          </StyledMiniCart>
+        )}
       </StyledButton>
     </StyledHeader>
   );

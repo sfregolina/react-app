@@ -1,10 +1,11 @@
 /** @jsxImportSource @emotion/react */
+import { useContext } from "react";
 import useBreakpointValue from "../../functions/useBreakpointValue";
 import ProductCard from "./ProductCard";
-import { useDrawerState } from "../DrawerStateProvider/DrawerStateProvider";
+import { CartStateContext } from "../CartStateProvider/CartStateProvider";
 
 const ProductList = ({ products }) => {
-  const { isOpen } = useDrawerState();
+  const { isOpen } = useContext(CartStateContext);
 
   const StyledProductList = ({ children }) => (
     <div
