@@ -1,8 +1,11 @@
 /** @jsxImportSource @emotion/react */
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import CheckoutList from "./CheckoutList";
+import CloseIcon from "../../icons/CloseIcon";
+import { StyledButton } from "../StyledComponents/StyledButton";
 import { StyledParagraph } from "../StyledComponents/StyledParagraph";
 import { useDataController } from "../DataControllerProvider/DataControllerProvider";
+import { CartStateContext } from "../CartStateProvider/CartStateProvider";
 
 const StyledEmptyCheckoutMessage = ({ children }) => (
   <div
@@ -20,6 +23,8 @@ const Checkout = () => {
     data: { checkout },
     setData,
   } = useDataController();
+
+  const { isOpen, setIsOpen } = useContext(CartStateContext);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -42,11 +47,21 @@ const Checkout = () => {
     fetchProducts();
   }, [setData]);
 
+  const isMobile = window.innerWidth < 426;
+
+  const toggleDrawer = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <div
-      className="checkout-wrapper"
-      style={{ minWidth: "40%", backgroundColor: "#DCDCDC" }}
-    >
+    <div className="checkout-wrapper">
+      {isMobile && (
+        <div style={{ margin: "20px 0 0 20px", display: "inline-block" }}>
+          <StyledButton onClick={toggleDrawer}>
+            <CloseIcon />
+          </StyledButton>
+        </div>
+      )}
       {checkout?.length > 0 ? (
         <CheckoutList checkoutProducts={checkout} />
       ) : (

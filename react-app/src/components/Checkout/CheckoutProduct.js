@@ -1,4 +1,6 @@
 /** @jsxImportSource @emotion/react */
+import { useContext } from "react";
+import { CartStateContext } from "../CartStateProvider/CartStateProvider";
 import CloseIcon from "../../icons/CloseIcon";
 import { StyledHeading3 } from "../StyledComponents/StyledHeading3";
 import { StyledParagraph } from "../StyledComponents/StyledParagraph";
@@ -53,8 +55,11 @@ const StyledCloseButton = ({ children, onClick }) => (
 
 const CheckoutProduct = ({ checkoutProduct }) => {
   const { setData } = useDataController();
+  const { count, setCount } = useContext(CartStateContext);
 
   const deleteCheckoutProduct = (product) => {
+    const checkoutProductQuantity = product.quantity;
+
     fetch(`http://localhost:3000/checkout/${product.id}`, {
       method: "DELETE",
     })
@@ -62,6 +67,7 @@ const CheckoutProduct = ({ checkoutProduct }) => {
         return res.json();
       })
       .then(() => {
+        setCount(count - checkoutProductQuantity);
         setData((data) => {
           return {
             ...data,

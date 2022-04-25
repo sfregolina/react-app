@@ -1,4 +1,6 @@
 /** @jsxImportSource @emotion/react */
+import { useContext } from "react";
+import { CartStateContext } from "../CartStateProvider/CartStateProvider";
 import { StyledHeading3 } from "../StyledComponents/StyledHeading3";
 import { StyledParagraph } from "../StyledComponents/StyledParagraph";
 import { useDataController } from "../DataControllerProvider/DataControllerProvider";
@@ -40,6 +42,7 @@ const StyledCta = ({ children, onClick }) => (
 
 const ProductCard = ({ product }) => {
   const { setData } = useDataController();
+  const { count, setCount } = useContext(CartStateContext);
 
   const addToBag = async () => {
     const checkoutProduct = await getCheckoutProduct(product);
@@ -47,6 +50,8 @@ const ProductCard = ({ product }) => {
     if (checkoutProduct) {
       checkoutProduct.quantity += 1;
       await patchCheckoutProduct(checkoutProduct);
+
+      setCount(count + 1);
 
       setData((data) => {
         const index = data.checkout.findIndex(
@@ -67,6 +72,8 @@ const ProductCard = ({ product }) => {
       ...product,
       quantity: 1,
     });
+
+    setCount(count + 1);
 
     setData((data) => {
       return {

@@ -1,4 +1,4 @@
-const CloseIcon = () => {
+const BurgerIcon = () => {
   return (
     <svg
       width="16"
@@ -8,11 +8,11 @@ const CloseIcon = () => {
       display="block"
     >
       <path
-        d="M16 .727L15.273 0 8 7.273.727 0 0 .727 7.273 8 0 15.273.727 16 8 8.727 15.273 16l.727-.727L8.727 8 16 .727z"
+        d="M0 .5h18v3H0zM0 6.5h18v3H0zM0 12.5h18v3H0z"
         fill="initial"
       ></path>
     </svg>
   );
 };
 
-export default CloseIcon;
+export default BurgerIcon;

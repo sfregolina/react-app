@@ -1,3 +1,4 @@
+/** @jsxImportSource @emotion/react */
 import { useEffect } from "react";
 import { useDataController } from "../DataControllerProvider/DataControllerProvider";
 import Header from "../Header/Header";
@@ -31,12 +32,11 @@ const Wishlist = () => {
   }, [setData]);
 
   return (
-    <div
-      className="wishlist-wrapper"
-      style={{ padding: "20px", overflowY: "scroll" }}
-    >
-      <Header />
-      {products?.length > 0 && <ProductList products={products} />}
+    <div className="wishlist-wrapper" style={{ overflowY: "scroll" }}>
+      <div style={{ padding: "20px" }}>
+        <Header />
+        {products?.length > 0 && <ProductList products={products} />}
+      </div>
     </div>
   );
 };
