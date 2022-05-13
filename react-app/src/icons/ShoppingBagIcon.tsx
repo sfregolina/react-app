@@ -1,4 +1,4 @@
-const ShoppingBagIcon = () => {
+function ShoppingBagIcon() {
   return (
     <svg
       width="20"
@@ -14,6 +14,6 @@ const ShoppingBagIcon = () => {
       />
     </svg>
   );
-};
+}
 
 export default ShoppingBagIcon;

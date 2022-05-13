@@ -3,7 +3,7 @@ import Cart from "./components/Cart/Cart";
 import { DataControllerProvider } from "./components/DataControllerProvider/DataControllerProvider";
 import { CartStateProvider } from "./components/CartStateProvider/CartStateProvider";
 
-const App = () => {
+function App() {
   return (
     <div className="App">
       <DataControllerProvider>
@@ -13,6 +13,6 @@ const App = () => {
       </DataControllerProvider>
     </div>
   );
-};
+}
 
 export default App;

@@ -1,4 +1,4 @@
-const BurgerIcon = () => {
+function BurgerIcon() {
   return (
     <svg
       width="16"
@@ -10,9 +10,9 @@ const BurgerIcon = () => {
       <path
         d="M0 .5h18v3H0zM0 6.5h18v3H0zM0 12.5h18v3H0z"
         fill="initial"
-      ></path>
+      />
     </svg>
   );
-};
+}
 
 export default BurgerIcon;

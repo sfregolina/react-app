@@ -1,24 +1,19 @@
 /** @jsxImportSource @emotion/react */
 import { useEffect, useContext } from "react";
+import styled from "@emotion/styled";
 import CheckoutList from "./CheckoutList";
 import CloseIcon from "../../icons/CloseIcon";
-import { StyledButton } from "../StyledComponents/StyledButton";
-import { StyledParagraph } from "../StyledComponents/StyledParagraph";
+import StyledButton from "../StyledComponents/StyledButton";
+import StyledParagraph from "../StyledComponents/StyledParagraph";
 import { useDataController } from "../DataControllerProvider/DataControllerProvider";
 import { CartStateContext } from "../CartStateProvider/CartStateProvider";
 
-const StyledEmptyCheckoutMessage = ({ children }) => (
-  <div
-    css={{
-      padding: "20px",
-      textAlign: "center",
-    }}
-  >
-    {children}
-  </div>
-);
+const StyledEmptyCheckoutMessage = styled.div({
+  padding: "20px",
+  textAlign: "center",
+});
 
-const Checkout = () => {
+const Checkout: React.FC = () => {
   const {
     data: { checkout },
     setData,
@@ -28,7 +23,7 @@ const Checkout = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const checkout = await fetch("http://localhost:3000/checkout")
+      const checkoutItems = await fetch("http://localhost:3000/checkout")
         .then((res) => {
           if (!res.ok) {
             throw Error("could not fetch the data for that recource");
@@ -39,9 +34,7 @@ const Checkout = () => {
           console.log(error.message);
         });
 
-      setData((data) => {
-        return { ...data, checkout };
-      });
+      setData((data) => ({ ...data, checkout: checkoutItems }));
     };
 
     fetchProducts();
@@ -63,7 +56,7 @@ const Checkout = () => {
         </div>
       )}
       {checkout?.length > 0 ? (
-        <CheckoutList checkoutProducts={checkout} />
+        <CheckoutList />
       ) : (
         <StyledEmptyCheckoutMessage>
           <StyledParagraph>Your bag is empty</StyledParagraph>
