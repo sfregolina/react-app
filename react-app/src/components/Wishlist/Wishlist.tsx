@@ -23,6 +23,7 @@ function Wishlist() {
           return res.json();
         })
         .catch((error) => {
+          // eslint-disable-next-line no-console
           console.log(error.message);
         });
 
