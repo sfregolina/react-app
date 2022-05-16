@@ -10,7 +10,7 @@ import {
   postCheckoutProduct,
   patchCheckoutProduct,
 } from "../../api/checkout";
-import { ProductType } from "../../types/common";
+import { ProductProps } from "../../types/common";
 
 const StyledProduct = styled.div({
   textAlign: "center",
@@ -29,7 +29,7 @@ const StyledCta = styled.button({
   cursor: "pointer",
 });
 
-const ProductCard: React.FC<ProductType> = (product) => {
+const ProductCard: React.FC<ProductProps> = (product) => {
   const { name, image, designer, price, sku } = product;
 
   const { setData } = useDataController();

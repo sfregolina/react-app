@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { useEffect } from "react";
-import { ProductType } from "../../types/common";
+import { ProductProps } from "../../types/common";
 import { useDataController } from "../DataControllerProvider/DataControllerProvider";
 import Header from "../Header/Header";
 import ProductList from "./ProductList";
@@ -13,7 +13,7 @@ const Wishlist: React.FC = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const productItems: Array<ProductType> = await fetch(
+      const productItems: Array<ProductProps> = await fetch(
         "http://localhost:3000/products",
       )
         .then((res) => {

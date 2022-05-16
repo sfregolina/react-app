@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { getCheckoutProducts } from "../../api/checkout";
-import { CheckoutProductType } from "../../types/common";
+import { CheckoutProductProps } from "../../types/common";
 
 interface CartStateContextProps {
   isOpen: boolean;
@@ -30,7 +30,7 @@ export const CartStateProvider: React.FC<CartStateProviderProps> = ({
     const checkoutProducts = await getCheckoutProducts();
 
     const checkoutCount = checkoutProducts.reduce(
-      (acc: number, item: CheckoutProductType) => acc + item.quantity,
+      (acc: number, item: CheckoutProductProps) => acc + item.quantity,
       0,
     );
 

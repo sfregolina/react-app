@@ -1,10 +1,10 @@
 import {
-  CheckoutProductBodyType,
-  CheckoutProductType,
-  ProductType,
+  CheckoutProductBodyProps,
+  CheckoutProductProps,
+  ProductProps,
 } from "../types/common";
 
-export const getCheckoutProducts = (): Promise<Array<CheckoutProductType>> =>
+export const getCheckoutProducts = (): Promise<Array<CheckoutProductProps>> =>
   fetch("http://localhost:3000/checkout")
     .then((res) => res.json())
     .then((checkoutProducts) => checkoutProducts)
@@ -14,8 +14,8 @@ export const getCheckoutProducts = (): Promise<Array<CheckoutProductType>> =>
     });
 
 export const getCheckoutProduct = (
-  product: ProductType,
-): Promise<CheckoutProductType> =>
+  product: ProductProps,
+): Promise<CheckoutProductProps> =>
   fetch(`http://localhost:3000/checkout?sku=${product.sku}`)
     .then((res) => res.json())
     .then((checkoutProduct) => checkoutProduct[0])
@@ -25,8 +25,8 @@ export const getCheckoutProduct = (
     });
 
 export const postCheckoutProduct = (
-  product: CheckoutProductBodyType,
-): Promise<CheckoutProductType> =>
+  product: CheckoutProductBodyProps,
+): Promise<CheckoutProductProps> =>
   fetch("http://localhost:3000/checkout", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -39,8 +39,8 @@ export const postCheckoutProduct = (
     });
 
 export const patchCheckoutProduct = (
-  product: CheckoutProductType,
-): Promise<CheckoutProductType> =>
+  product: CheckoutProductProps,
+): Promise<CheckoutProductProps> =>
   fetch(`http://localhost:3000/checkout/${product.id}`, {
     method: "PATCH",
     headers: {

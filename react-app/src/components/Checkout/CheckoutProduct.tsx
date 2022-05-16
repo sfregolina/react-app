@@ -6,7 +6,7 @@ import CloseIcon from "../../icons/CloseIcon";
 import StyledHeading3 from "../StyledComponents/StyledHeading3";
 import StyledParagraph from "../StyledComponents/StyledParagraph";
 import { useDataController } from "../DataControllerProvider/DataControllerProvider";
-import { CheckoutProductType } from "../../types/common";
+import { CheckoutProductProps } from "../../types/common";
 
 const StyledCheckoutProduct = styled.div({
   display: "flex",
@@ -25,12 +25,12 @@ const StyledCloseButton = styled.button({
   cursor: "pointer",
 });
 
-const CheckoutProduct: React.FC<CheckoutProductType> = (checkoutProduct) => {
+const CheckoutProduct: React.FC<CheckoutProductProps> = (checkoutProduct) => {
   const { name, image, designer, price, quantity } = checkoutProduct;
   const { setData } = useDataController();
   const { count, setCount } = useContext(CartStateContext);
 
-  const deleteCheckoutProduct = (product: CheckoutProductType) => {
+  const deleteCheckoutProduct = (product: CheckoutProductProps) => {
     const checkoutProductQuantity = product.quantity;
 
     fetch(`http://localhost:3000/checkout/${product.id}`, {

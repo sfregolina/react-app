@@ -1,4 +1,4 @@
-export type CheckoutProductBodyType = {
+export type CheckoutProductBodyProps = {
   sku: number;
   designer: string;
   name: string;
@@ -7,11 +7,11 @@ export type CheckoutProductBodyType = {
   quantity: number;
 };
 
-export interface CheckoutProductType extends CheckoutProductBodyType {
+export interface CheckoutProductProps extends CheckoutProductBodyProps {
   id: number;
 }
 
-export interface ProductType {
+export interface ProductProps {
   id: number;
   sku: number;
   designer: string;
@@ -21,6 +21,6 @@ export interface ProductType {
 }
 
 export interface DataType {
-  products: Array<ProductType>;
-  checkout: Array<CheckoutProductType>;
+  products: Array<ProductProps>;
+  checkout: Array<CheckoutProductProps>;
 }
