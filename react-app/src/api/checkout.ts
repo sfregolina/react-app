@@ -1,4 +1,8 @@
-import { CheckoutProductType, ProductType } from "../types/common";
+import {
+  CheckoutProductBodyType,
+  CheckoutProductType,
+  ProductType,
+} from "../types/common";
 
 export const getCheckoutProducts = (): Promise<Array<CheckoutProductType>> =>
   fetch("http://localhost:3000/checkout")
@@ -21,7 +25,7 @@ export const getCheckoutProduct = (
     });
 
 export const postCheckoutProduct = (
-  product: CheckoutProductType,
+  product: CheckoutProductBodyType,
 ): Promise<CheckoutProductType> =>
   fetch("http://localhost:3000/checkout", {
     method: "POST",

@@ -30,7 +30,7 @@ const StyledCta = styled.button({
 });
 
 const ProductCard: React.FC<ProductType> = (product) => {
-  const { name, image, designer, price } = product;
+  const { name, image, designer, price, sku } = product;
 
   const { setData } = useDataController();
   const { count, setCount } = useContext(CartStateContext);
@@ -61,7 +61,11 @@ const ProductCard: React.FC<ProductType> = (product) => {
     }
 
     const newCheckoutProduct = await postCheckoutProduct({
-      ...product,
+      name,
+      image,
+      designer,
+      price,
+      sku,
       quantity: 1,
     });
 

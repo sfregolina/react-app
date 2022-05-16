@@ -1,23 +1,26 @@
-export type CheckoutProductType = {
+export type CheckoutProductBodyType = {
   sku: number;
   designer: string;
   name: string;
   price: string;
   image: string;
-  id: number;
   quantity: number;
 };
 
-export type ProductType = {
+export interface CheckoutProductType extends CheckoutProductBodyType {
+  id: number;
+}
+
+export interface ProductType {
   id: number;
   sku: number;
   designer: string;
   name: string;
   price: string;
   image: string;
-};
+}
 
-export type DataType = {
+export interface DataType {
   products: Array<ProductType>;
   checkout: Array<CheckoutProductType>;
-};
+}
