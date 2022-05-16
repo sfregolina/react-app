@@ -23,7 +23,8 @@ const initialContext = {
 const DataControllerContext =
   React.createContext<DataControllerContextProps>(initialContext);
 
-export const useDataController = () => useContext(DataControllerContext);
+export const useDataController = (): DataControllerContextProps =>
+  useContext(DataControllerContext);
 
 export const DataControllerProvider: React.FC<DataControllerProviderProps> = ({
   children,

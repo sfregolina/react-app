@@ -1,22 +1,28 @@
 import { CheckoutProductType, ProductType } from "../types/common";
 
-export const getCheckoutProducts = () =>
+export const getCheckoutProducts = (): Promise<Array<CheckoutProductType>> =>
   fetch("http://localhost:3000/checkout")
     .then((res) => res.json())
     .then((checkoutProducts) => checkoutProducts)
     .catch((error) => {
+      // eslint-disable-next-line no-console
       console.log(error.message);
     });
 
-export const getCheckoutProduct = (product: ProductType) =>
+export const getCheckoutProduct = (
+  product: ProductType,
+): Promise<CheckoutProductType> =>
   fetch(`http://localhost:3000/checkout?sku=${product.sku}`)
     .then((res) => res.json())
     .then((checkoutProduct) => checkoutProduct[0])
     .catch((error) => {
+      // eslint-disable-next-line no-console
       console.log(error.message);
     });
 
-export const postCheckoutProduct = (product: CheckoutProductType) =>
+export const postCheckoutProduct = (
+  product: CheckoutProductType,
+): Promise<CheckoutProductType> =>
   fetch("http://localhost:3000/checkout", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -24,10 +30,13 @@ export const postCheckoutProduct = (product: CheckoutProductType) =>
   })
     .then((res) => res.json())
     .catch((error) => {
+      // eslint-disable-next-line no-console
       console.log(error.message);
     });
 
-export const patchCheckoutProduct = (product: CheckoutProductType) =>
+export const patchCheckoutProduct = (
+  product: CheckoutProductType,
+): Promise<CheckoutProductType> =>
   fetch(`http://localhost:3000/checkout/${product.id}`, {
     method: "PATCH",
     headers: {
@@ -37,5 +46,6 @@ export const patchCheckoutProduct = (product: CheckoutProductType) =>
   })
     .then((res) => res.json())
     .catch((error) => {
+      // eslint-disable-next-line no-console
       console.log(error.message);
     });

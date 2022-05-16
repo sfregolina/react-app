@@ -5,7 +5,7 @@ import { useDataController } from "../DataControllerProvider/DataControllerProvi
 import Header from "../Header/Header";
 import ProductList from "./ProductList";
 
-function Wishlist() {
+const Wishlist: React.FC = () => {
   const {
     data: { products },
     setData,
@@ -44,6 +44,6 @@ function Wishlist() {
       </div>
     </div>
   );
-}
+};
 
 export default Wishlist;

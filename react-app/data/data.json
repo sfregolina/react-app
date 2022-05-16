@@ -1,7 +1,6 @@
 {
   "products": [
     {
-      "id": 1,
       "sku": 1,
       "designer": "Balenciaga",
       "name": "Oversized denim jacket",
@@ -9,7 +8,6 @@
       "image": "https://assetsprx.matchesfashion.com/img/product/1469638_1_large.jpg"
     },
     {
-      "id": 2,
       "sku": 2,
       "designer": "Gucci",
       "name": "Leather pumps",
@@ -17,7 +15,6 @@
       "image": "https://assetsprx.matchesfashion.com/img/product/1473733_1_large.jpg"
     },
     {
-      "id": 3,
       "sku": 3,
       "designer": "Lemaire",
       "name": "Wide-sleeve top",
@@ -25,7 +22,6 @@
       "image": "https://assetsprx.matchesfashion.com/img/product/1464086_1_large.jpg"
     },
     {
-      "id": 4,
       "sku": 4,
       "designer": "Simone Rocha",
       "name": "Embroidered dress",
@@ -33,7 +29,6 @@
       "image": "https://assetsprx.matchesfashion.com/img/product/1473831_1_large.jpg"
     },
     {
-      "id": 5,
       "sku": 5,
       "designer": "Loewe",
       "name": "Puzzled medium bag",
@@ -41,7 +36,6 @@
       "image": "https://assetsprx.matchesfashion.com/img/product/1420070_1_large.jpg"
     },
     {
-      "id": 6,
       "sku": 6,
       "designer": "Jil Sander",
       "name": "Wrap front blazer",
@@ -49,7 +43,6 @@
       "image": "https://assetsprx.matchesfashion.com/img/product/1458368_1_large.jpg"
     },
     {
-      "id": 7,
       "sku": 7,
       "designer": "Ganni",
       "name": "Leather clogs",
@@ -57,7 +50,6 @@
       "image": "https://assetsprx.matchesfashion.com/img/product/1468693_1_large.jpg"
     },
     {
-      "id": 8,
       "sku": 8,
       "designer": "Saint Laurent",
       "name": "High-rise trousers",
@@ -65,7 +57,6 @@
       "image": "https://assetsprx.matchesfashion.com/img/product/1434064_1_large.jpg"
     },
     {
-      "id": 9,
       "sku": 9,
       "designer": "Jacquemus",
       "name": "Bambino leather bag",
@@ -73,7 +64,6 @@
       "image": "https://assetsprx.matchesfashion.com/img/product/1463437_1_large.jpg"
     },
     {
-      "id": 10,
       "sku": 10,
       "designer": "Bottega Veneta",
       "name": "Leather ankle boots",
@@ -81,24 +71,5 @@
       "image": "https://assetsprx.matchesfashion.com/img/product/1427139_1_large.jpg"
     }
   ],
-  "checkout": [
-    {
-      "id": 2,
-      "name": "Leather pumps",
-      "image": "https://assetsprx.matchesfashion.com/img/product/1473733_1_large.jpg",
-      "designer": "Gucci",
-      "price": "£600",
-      "sku": 2,
-      "quantity": 2
-    },
-    {
-      "id": 3,
-      "name": "Wide-sleeve top",
-      "image": "https://assetsprx.matchesfashion.com/img/product/1464086_1_large.jpg",
-      "designer": "Lemaire",
-      "price": "£480",
-      "sku": 3,
-      "quantity": 1
-    }
-  ]
+  "checkout": []
 }

@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import Wishlist from "../Wishlist/Wishlist";
 import Checkout from "../Checkout/Checkout";
-import Drawer from "../Drawer/Drawer";
+import StyledDrawer from "../StyledComponents/StyledDrawer";
 import StyledContainer from "../StyledComponents/StyledContainer";
 import { CartStateContext } from "../CartStateProvider/CartStateProvider";
 
@@ -11,9 +11,9 @@ const Cart: React.FC = () => {
     <StyledContainer>
       <Wishlist />
       {isOpen && (
-        <Drawer>
+        <StyledDrawer>
           <Checkout />
-        </Drawer>
+        </StyledDrawer>
       )}
     </StyledContainer>
   );

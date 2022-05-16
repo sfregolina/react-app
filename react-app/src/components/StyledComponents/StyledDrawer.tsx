@@ -5,7 +5,7 @@ interface DrawerProps {
   children: React.ReactNode;
 }
 
-const StyledDrawer = ({ children }: DrawerProps) => (
+const StyledDrawer: React.ElementType = ({ children }: DrawerProps) => (
   <div
     css={useBreakpointValue({
       minWidth: ["100%", "50%", "40%"],
@@ -17,8 +17,4 @@ const StyledDrawer = ({ children }: DrawerProps) => (
   </div>
 );
 
-const Drawer = ({ children }: DrawerProps) => (
-  <StyledDrawer>{children}</StyledDrawer>
-);
-
-export default Drawer;
+export default StyledDrawer;
