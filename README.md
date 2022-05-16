@@ -11,6 +11,7 @@ The project will include:
 - Hooks (`useState`, `UseEffect`)
 - Custom hooks
 - Context Provider
+- Typescript
 
 ## Commands
 
